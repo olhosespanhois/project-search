@@ -26,13 +26,10 @@
           "src/assets"
         ],
         "styles": [
-          "src/assets/fontawesome/scss/fontawesome.scss",
-          "src/assets/fontawesome/scss/regular.scss",
           "node_modules/bootstrap/scss/bootstrap.scss",
           "src/styles.scss"
         ],
         "scripts": [
-          "src/assets/fontawesome/js/all.min.js",
           "node_modules/@popperjs/core/dist/umd/popper.min.js"
         ]
       },
