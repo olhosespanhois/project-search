@@ -3,16 +3,45 @@
         <div class="col-12 py-3">
             <h2 class="pb-3 text-center">Busca</h2>
             <p class="pb-3 text-center">Realize a busca e encontre seu filme favorito</p>
-            <form class="p-5">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Titulo do Filme" aria-label="Campo para buscar o título com dois botões">
-                    <button class="btn btn-secondary" aria-label="Botão para busca" type="button"><i class="fa-regular fa-magnifying-glass"></i></button>
-                    <button class="btn btn-secondary" aria-label="Botão para limpar campo de busca" type="button"><i class="fa-regular fa-eraser"></i></button>
-                </div>
-            </form>
+            <div class="search">
+                <form class="p-5">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Titulo do Filme" aria-label="Campo para buscar o título com dois botões">
+                        <button class="btn btn-secondary" aria-label="Botão para busca" type="button">
+                            <span class="fa-regular fa-magnifying-glass"></span>
+                        </button>
+                        <button class="btn btn-secondary" aria-label="Botão para limpar campo de busca" type="button">
+                            <span class="fa-regular fa-eraser"></span>
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="col-12 py-3">
-            <p>lista</p>
+        <div id="list" class="col-12 py-3">
+            <article>
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-lg-7">
+                        <h3 class="pb-3">Título</h3>
+                        <p class="pb-4">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores totam, eaque voluptate vitae placeat quae dolor nemo perferendis fugit iusto vero cum doloremque quam repellat maiores, voluptates at magnam laudantium?
+                        </p>
+                        <p class="pb-2">
+                            <strong class="pr-2">Atores:</strong> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime iure nemo accusantium sapiente perspiciatis quo quidem, aut ex eaque explicabo optio? Voluptatibus neque placeat ratione ipsam consectetur, similique quisquam atque!
+                        </p>
+                        <p class="pb-5">
+                            <strong class="pr-2">Review:&nbsp;</strong><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star-half-stroke"></i> <i class="fa-regular fa-star"></i>
+                        </p>
+                        <button class="btn btn-secondary" aria-label="Botão para adicionar favoritos" type="button">
+                            Favorito <span class="fa-regular fa-heart"></span>
+                        </button>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-5">
+                        <figure class="my-2 mx-auto box-border bg-white">
+                            <img src="https://placehold.co/400x600/FFFFFF/000000.png" class="box-gradient" alt="" srcset="">
+                        </figure>
+                    </div>
+                </div> 
+            </article>
         </div>
     </div>
 </section>
