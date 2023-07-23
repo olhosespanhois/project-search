@@ -1,1 +1,46 @@
-<p>list-movie works!</p>
+<div id="list" class="col-12 py-3" *ngIf="film">
+    <article>
+        <div class="row">
+            <div class="col-12 col-sm-4 col-lg-3 pb-4" *ngFor="let filmItem of film">
+                <h3 class="pb-3 title">{{filmItem.Title}}</h3>
+                <p class="pb-2"><strong class="pr-2">Ano:</strong> {{filmItem.Year}}</p>
+                <figure class="my-2 mx-auto box-border bg-white mb-3" *ngIf="filmItem.Poster != 'N/A'; else noFilm">
+                    <img [src]="filmItem.Poster" class="box-gradient" [alt]="filmItem.Title" srcset="">
+                </figure>
+                <ng-template #noFilm>
+                    <figure class="my-2 mx-auto box-border bg-white mb-3">
+                        <img src="../../../assets/src/noposter.png" class="box-gradient" alt="Sem poster" srcset="">
+                    </figure>
+                </ng-template>
+                <button class="btn btn-secondary" aria-label="Botão para abrir modal com mais dados" type="button">
+                    Veja mais <span class="fa-solid fa-film"></span>
+                </button>
+            </div>
+        </div> 
+    </article>
+</div>
+
+<!-- <div id="list" class="col-12 py-3" *ngFor="let filmItem of film">
+    <article>
+        <div class="row">
+            <div class="col-12 col-sm-6 col-lg-7">
+                <h3 class="pb-3">{{filmItem.Title}}</h3>
+                <p class="pb-4"></p>
+                <p class="pb-2">
+                    <strong class="pr-2">Atores:</strong> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime iure nemo accusantium sapiente perspiciatis quo quidem, aut ex eaque explicabo optio? Voluptatibus neque placeat ratione ipsam consectetur, similique quisquam atque!
+                </p>
+                <p class="pb-5">
+                    <strong class="pr-2">Review:&nbsp;</strong><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star-half-stroke"></i> <i class="fa-regular fa-star"></i>
+                </p>
+                <button class="btn btn-secondary" aria-label="Botão para adicionar favoritos" type="button">
+                    Favorito <span class="fa-regular fa-heart"></span>
+                </button>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-5">
+                <figure class="my-2 mx-auto box-border bg-white">
+                    <img src="https://placehold.co/500x600/FFFFFF/000000.png" class="box-gradient" alt="" srcset="">
+                </figure>
+            </div>
+        </div> 
+    </article>
+</div> -->

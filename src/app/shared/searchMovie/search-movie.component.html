@@ -1,1 +1,40 @@
-<p>search-movie works!</p>
+<div class="col-12 py-3">
+    <h2 class="pb-3 text-center">Busca</h2>
+    <p class="pb-3 text-center">Realize a busca e encontre seu filme favorito</p>
+    <div class="search">
+        <form class="p-5" [formGroup]="searchForm" (ngSubmit)="getSubmit()">
+            <div class="input-group">
+                <input 
+                    type="text"
+                    id="searchInput"
+                    name="searchInput"
+                    class="search-input form-control" 
+                    placeholder="Titulo do Filme" 
+                    aria-label="Campo para buscar o título com dois botões"
+                    formControlName="searchInput"
+                    minlength="3"
+                    required
+                >
+                <button 
+                    id="search-submit" 
+                    class="btn btn-secondary" 
+                    aria-label="Botão para busca" 
+                    type="submit"  
+                    [disabled]="!searchForm.valid"
+                >
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button 
+                    id="clear" 
+                    class="btn btn-secondary" 
+                    aria-label="Botão para limpar campo de busca" 
+                    type="button" 
+                    [disabled]="!searchForm.valid" 
+                    (click)="clearSearchMovie()"
+                >
+                    <i class="fa-solid fa-eraser"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -3,13 +3,14 @@ import { NgModule } from '@angular/core';
 import { FooterComponent } from "./footer/footer.component";
 import { HeaderComponent } from "./header/header.component";
 
+
 @NgModule({
     declarations: [],
     providers: [],
     bootstrap: [],
     imports: [
         HeaderComponent,
-        FooterComponent
+        FooterComponent,
     ],
     exports: [
         HeaderComponent,
