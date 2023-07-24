@@ -11,10 +11,10 @@ export class ServicesService {
 
   constructor(private http: HttpClient) { }
 
-  getMovieDetails(movieId: string, page: number) {
-    return this.http.get(`${this.apiUrl}?apikey=${this.apiKey}&s=${movieId}&type=movie&page=${page}&plot=full`);
+  getMovieDetails(movieTitle: string, page: number) {
+    return this.http.get(`${this.apiUrl}?apikey=${this.apiKey}&s=${movieTitle}&type=movie&page=${page}&plot=full`);
   }
   getMovieModal(movieId: string) {
-    return this.http.get(`${this.apiUrl}?apikey=${this.apiKey}&t=${movieId}&type=movie&plot=full`);
+    return this.http.get(`${this.apiUrl}?apikey=${this.apiKey}&i=${movieId}&type=movie&plot=full`);
   }
 }

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListMovieComponent } from './listMovie/list-movie.component';
+import { ListModalComponent } from './listMovie/listModal/list-modal.component';
 import { SearchMovieComponent } from './searchMovie/search-movie.component';
 
 @NgModule({
@@ -9,11 +10,13 @@ import { SearchMovieComponent } from './searchMovie/search-movie.component';
         FormsModule,
         ReactiveFormsModule,
         SearchMovieComponent,
-        ListMovieComponent
+        ListMovieComponent,
+        ListModalComponent
     ],
     exports: [
         SearchMovieComponent,
-        ListMovieComponent 
+        ListMovieComponent,
+        ListModalComponent
     ],
 })
 export class SharedModule { }

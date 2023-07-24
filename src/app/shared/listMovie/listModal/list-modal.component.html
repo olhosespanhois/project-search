@@ -1,0 +1,51 @@
+<div class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content" *ngIf="filmDetails; else load">
+            <div class="modal-header">
+                <h5 class="modal-title">{{filmDetails?.Title}}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="activeModal.dismiss()"></button>
+            </div>
+            <div class="modal-body">
+                <article class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-lg-7">
+                            <h3 class="pb-3">{{filmDetails?.Title}}</h3>
+                            <p class="pb-4">{{filmDetails?.Plot}}</p>
+                            <p class="pb-2" *ngIf="filmDetails.Actors">
+                                <strong class="pr-2">Atores:</strong> {{filmDetails?.Actors}}
+                            </p>
+                            <p class="pb-5" *ngIf="filmDetails.imdbRating">
+                                <strong class="pr-2">Review IMDB:&nbsp;</strong>{{filmDetails?.imdbRating}} <i class="fa-solid fa-star"></i>
+                            </p>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-5" *ngIf="filmDetails.Poster">
+                            <figure class="my-2 mx-auto box-border bg-white mb-3" *ngIf="filmDetails.Poster != 'N/A'; else noFilm">
+                                <img [src]="filmDetails?.Poster" class="box-gradient" [alt]="filmDetails?.Title" srcset="">
+                            </figure>
+                            <ng-template #noFilm>
+                                <figure class="my-2 mx-auto box-border bg-white mb-3">
+                                    <img src="../../../assets/src/noposter.png" class="box-gradient" alt="Sem poster" srcset="">
+                                </figure>
+                            </ng-template>
+                        </div>
+                    </div> 
+                </article>
+            </div>
+        </div>
+        <ng-template #load>
+            <div class="modal-header">
+                <h5 class="modal-title">Carregando</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="activeModal.dismiss()"></button>
+            </div>
+            <div class="modal-body">
+                <article class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <h3 class="pb-3">Carregando!</h3>
+                        </div>
+                    </div> 
+              </article>
+          </div>
+        </ng-template>
+    </div>
+</div>

@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ListModalComponent } from './listModal/list-modal.component';
 
 @Component({
   selector: 'app-list-movie',
@@ -8,13 +10,21 @@ import { Component, Input, SimpleChanges } from '@angular/core';
   templateUrl: './list-movie.component.html',
   styleUrls: ['./list-movie.component.scss']
 })
-export class ListMovieComponent {
+export class ListMovieComponent  implements OnChanges {
   @Input() movie: any;
   film:any;
+  
+
+  constructor(private modalService: NgbModal) {}
+
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['movie'] && this.movie) {
-      console.log('Movie Details:', this.movie);
       this.film = this.movie.Search;
     }
+  }
+
+  seeMore(id:any){
+    const dialogRef = this.modalService.open(ListModalComponent);
+    dialogRef.componentInstance.id = id;
   }
 }
